@@ -5,12 +5,18 @@
 
 .recentPostContainer {
   display: flex;
-  align-items: flex-start;
+  align-items: top;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
 }
 
+.fullWidthP {
+  text-align: justify;
+}
 .recentPostSummaryContainer {
   max-width: 400px;
-  margin: 16px;
+  margin: var(--large);
 }
 
 .recentPostImage {
@@ -21,4 +27,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.siteTitle {
+  color: var(--orange);
 }

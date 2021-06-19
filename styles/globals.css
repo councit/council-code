@@ -4,6 +4,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--blue);
+  color: var(--platinum);
 }
 
 a {
@@ -13,4 +15,22 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* CSS HSL */
+:root {
+  /* CSS HSL */
+
+  --black: hsla(0, 0%, 0%, 1);
+  --blue: hsla(221, 51%, 16%, 1);
+  --orange: hsla(37, 98%, 53%, 1);
+  --platinum: hsla(0, 0%, 90%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+
+  /* SPACING */
+  --x-small: 2px;
+  --small: 4px;
+  --medium: 8px;
+  --large: 16px;
+  --x-large: 32px;
 }

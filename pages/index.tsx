@@ -14,12 +14,12 @@ export default function Home() {
               className={styles.recentPostImage}
               src="/test.jpg"
               alt="test image for title"
-              width={500}
-              height={350}
+              width={400}
+              height={200}
             />
             <div className={styles.recentPostSummaryContainer}>
               <h2>Testing React</h2>
-              <p>
+              <p className={styles.fullWidthP}>
                 A dive into testing best practises in React. Up until I wrote
                 this article I had not written a single unit test in my career.
                 This post will explain what are the critical elements to testing
@@ -27,6 +27,16 @@ export default function Home() {
                 adipisicing elit. Officiis earum quasi repellat consequatur
                 itaque sapiente a saepe asperiores exercitationem numquam.
               </p>
+
+              <p className={styles.fullWidthP}>
+                A dive into testing best practises in React. Up until I wrote
+                this article I had not written a single unit test in my career.
+                This post will explain what are the critical elements to testing
+                React applications. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Officiis earum quasi repellat consequatur
+                itaque sapiente a saepe asperiores exercitationem numquam.
+              </p>
+
               <ul>
                 <li>Jest</li>
                 <li>TestingLibrary-React</li>
