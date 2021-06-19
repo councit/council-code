@@ -1,34 +1,22 @@
 .container {
   width: 80%;
   margin: 0 auto;
+  max-width: 900px;
 }
 
 .recentPostContainer {
   display: flex;
+  flex-direction: column;
   align-items: top;
   justify-content: center;
-  margin: auto;
-  width: 100%;
-}
-
-.fullWidthP {
-  text-align: justify;
-}
-.recentPostSummaryContainer {
-  max-width: 400px;
-  margin: var(--large);
 }
 
 .recentPostImage {
   border-radius: 5px;
 }
 
-.postCardsRow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .siteTitle {
   color: var(--orange);
+  width: 100%;
+  text-align: center;
 }

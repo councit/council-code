@@ -17,6 +17,10 @@ a {
   box-sizing: border-box;
 }
 
+p {
+  text-align: justify;
+}
+
 /* CSS HSL */
 :root {
   /* CSS HSL */
