@@ -24,7 +24,7 @@ export default function LoginForm({ name, password }: IProps) {
       setErrorMessage(err);
     }
   }
-  console.log(errorMessage);
+
   return (
     <div className={styles.container}>
       {errorMessage && <h4 className={styles.error}>{errorMessage}</h4>}
