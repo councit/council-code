@@ -3,5 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  outline: 1px solid red;
+}
+
+.input {
+  padding-bottom: 16px;
 }

@@ -9,12 +9,14 @@ export default function LoginForm() {
     <div className={styles.container}>
       <h3 className={styles.formTitle}>Log In Form</h3>
       <TextField
+        className={styles.input}
         label="Name"
         variant="outlined"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <TextField
+        className={styles.input}
         label="Password"
         variant="outlined"
         value={password}
