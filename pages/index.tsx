@@ -91,7 +91,7 @@ export default function Home() {
           sentence again and let it sink in. "The more tests resemble the way
           your software is used, the more confidence they can give you".{" "}
         </p>
-        <LoginForm />
+        <LoginForm name="Taylor" password="password" />
       </main>
     </div>
   );

@@ -2,28 +2,54 @@ import React, { useState } from "react";
 import { Button, TextField, Container } from "@material-ui/core";
 import styles from "./login-form.module.css";
 
-export default function LoginForm() {
-  const [name, setName] = useState<string | null>();
-  const [password, setPassword] = useState<string | null>();
+interface IProps {
+  name: string;
+  password: string;
+}
+
+export default function LoginForm({ name, password }: IProps) {
+  const [inputName, setInputName] = useState<string | null>();
+  const [inputPassword, setInputPassword] = useState<string | null>();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>();
+
+  function handleLogin(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    try {
+      if (inputName !== name) throw "name does not match records";
+      if (inputPassword !== password) throw "password incorrect";
+      setIsLoggedIn(!isLoggedIn);
+      setErrorMessage(null);
+    } catch (err) {
+      setErrorMessage(err);
+    }
+  }
+  console.log(errorMessage);
   return (
     <div className={styles.container}>
       <h3 className={styles.formTitle}>Log In Form</h3>
-      <TextField
-        className={styles.input}
-        label="Name"
-        variant="outlined"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <TextField
-        className={styles.input}
-        label="Password"
-        variant="outlined"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <Button color="primary" variant="contained">
-        Login
+      {errorMessage && <h4 className={styles.error}>{errorMessage}</h4>}
+      {isLoggedIn && <h3>Welcome, {name}!</h3>}
+      {!isLoggedIn && (
+        <>
+          <TextField
+            className={styles.input}
+            label="Name"
+            variant="outlined"
+            value={inputName}
+            onChange={(e) => setInputName(e.target.value)}
+          />
+          <TextField
+            className={styles.input}
+            label="Password"
+            variant="outlined"
+            value={inputPassword}
+            onChange={(e) => setInputPassword(e.target.value)}
+          />
+        </>
+      )}
+      <Button color="primary" variant="contained" onClick={handleLogin}>
+        {isLoggedIn ? "Logout" : "Login"}
       </Button>
     </div>
   );
