@@ -31,7 +31,9 @@ export default function LoginForm({ name, password }: IProps) {
       {isLoggedIn ? (
         <h3>Welcome, {name}!</h3>
       ) : (
-        <h3 className={styles.formTitle}>Log In Form</h3>
+        <h3 data-testid="form-title" className={styles.formTitle}>
+          Login Form
+        </h3>
       )}
       {!isLoggedIn && (
         <>
