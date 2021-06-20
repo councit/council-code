@@ -27,9 +27,12 @@ export default function LoginForm({ name, password }: IProps) {
   console.log(errorMessage);
   return (
     <div className={styles.container}>
-      <h3 className={styles.formTitle}>Log In Form</h3>
       {errorMessage && <h4 className={styles.error}>{errorMessage}</h4>}
-      {isLoggedIn && <h3>Welcome, {name}!</h3>}
+      {isLoggedIn ? (
+        <h3>Welcome, {name}!</h3>
+      ) : (
+        <h3 className={styles.formTitle}>Log In Form</h3>
+      )}
       {!isLoggedIn && (
         <>
           <TextField
