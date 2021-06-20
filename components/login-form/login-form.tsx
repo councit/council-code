@@ -8,10 +8,10 @@ interface IProps {
 }
 
 export default function LoginForm({ name, password }: IProps) {
-  const [inputName, setInputName] = useState<string | null>();
-  const [inputPassword, setInputPassword] = useState<string | null>();
+  const [inputName, setInputName] = useState<string | null>("");
+  const [inputPassword, setInputPassword] = useState<string | null>("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>();
+  const [errorMessage, setErrorMessage] = useState<string | null>("");
 
   function handleLogin(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
@@ -27,9 +27,13 @@ export default function LoginForm({ name, password }: IProps) {
 
   return (
     <div className={styles.container}>
-      {errorMessage && <h4 className={styles.error}>{errorMessage}</h4>}
+      {errorMessage && (
+        <h4 data-testid="error-msg" className={styles.error}>
+          {errorMessage}
+        </h4>
+      )}
       {isLoggedIn ? (
-        <h3>Welcome, {name}!</h3>
+        <h3 data-testid="welcome-text">Welcome, {name}!</h3>
       ) : (
         <h3 data-testid="form-title" className={styles.formTitle}>
           Login Form
@@ -38,6 +42,7 @@ export default function LoginForm({ name, password }: IProps) {
       {!isLoggedIn && (
         <>
           <TextField
+            id="name"
             className={styles.input}
             label="Name"
             variant="outlined"
@@ -45,6 +50,7 @@ export default function LoginForm({ name, password }: IProps) {
             onChange={(e) => setInputName(e.target.value)}
           />
           <TextField
+            id="password"
             className={styles.input}
             label="Password"
             variant="outlined"
