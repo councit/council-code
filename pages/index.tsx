@@ -5,7 +5,7 @@ import LoginForm from "../components/login-form/login-form";
 export default function Home() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.siteTitle}>Council Codes</h1>
+      <h1 className={styles.siteTitle}>Council Code</h1>
       <div className={styles.recentPostContainer}>
         <Image
           className={styles.recentPostImage}
